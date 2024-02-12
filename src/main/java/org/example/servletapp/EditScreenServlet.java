@@ -6,6 +6,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -19,6 +20,11 @@ public class EditScreenServlet extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         res.setContentType("text/html");
         PrintWriter pw = res.getWriter();
+        
+        HttpSession session = req.getSession();
+        Object username = session.getAttribute("username");
+        if (username == null)
+            pw.println("<script>alert('NON CONNECTE!!'); window.location.href='login';</script>");
 
         int idAb = Integer.parseInt(req.getParameter("idab"));
         try {
