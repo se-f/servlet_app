@@ -76,8 +76,6 @@ public class Homepage extends HttpServlet {
             // BUTTON
             out.println("<br><button class='btn btn-primary mr-2' type=\"submit\">Créer</button></form>");
             out.println("</div>");
-//            out.println("</div>");
-
 
             // Forward the request to ContentProviderServlet
             RequestDispatcher dispatcher = request.getRequestDispatcher("/getAbonnes");
@@ -88,21 +86,23 @@ public class Homepage extends HttpServlet {
             out.println("<p>INFO:</p>");
 
 
-            // Getting other session info
+            // Display session info
             if (username != null) {
                 out.println("<p>Connecté tant que: " + username + "</p>");
             } else
                 out.println("<p>Pas encore connecté!</p>");
 
-
+            // Get last registered user
             Object registeredAb = session.getAttribute("registeredab");
             if (registeredAb != null)
                 out.println("<p>Dernier abonné créé: " + registeredAb + "</p>");
 
+            // Get last modified user
             Object modifiedAb = session.getAttribute("modifiedab");
             if (modifiedAb != null)
                 out.println("<p>Dernier abonné modifié: " + modifiedAb + "</p>");
 
+            // Get last deleted user
             Object deletedAb = session.getAttribute("deletedab");
             if (deletedAb != null)
                 out.println("<p>Dernier abonné supprimé: " + deletedAb + "</p>");

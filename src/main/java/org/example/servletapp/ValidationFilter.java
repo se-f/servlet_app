@@ -9,7 +9,7 @@ import java.io.PrintWriter;
 
 @WebFilter(
         filterName = "ValidationFilter",
-        urlPatterns = {"/register", "/editUrl"} // Les URL qui doivent être filtrées
+        urlPatterns = {"/register", "/editUrl"} // URL patterns of the servlets to be filtered
 
 )
 public class ValidationFilter implements Filter {
@@ -20,19 +20,19 @@ public class ValidationFilter implements Filter {
 
         HttpServletResponse httpResponse = (HttpServletResponse) response;
 
-        // Récupérer les paramètres du formulaire
+        // Get form data
         String idAb = request.getParameter("idab");
         String nomAb = request.getParameter("nomab");
 
-        // Validation des données
+        // Check if form data is valid
         if (idAb == null || nomAb.trim().isEmpty() || !isInteger(idAb)) {
 
-            // Les données ne sont pas valides, rediriger ou afficher un message d'erreur
+            // Form data is invalid
             PrintWriter pw = httpResponse.getWriter();
             pw.println("<script>alert('Donnees du formulaire non valides!');window.location.href='homepage';</script>");
 
         } else {
-            // Les données sont valides, continuer la chaîne de filtres
+            // Form data is valid
             chain.doFilter(request, response);
         }
     }
