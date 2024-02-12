@@ -60,14 +60,14 @@ public class LoginScreenServlet extends HttpServlet {
 
             // ID TEXTFIELD
             out.println("<label for=\"login\">Utilisateur:</label>");
-            out.println("<input type=\"text\" id=\"login\" name=\"login\" placeholder=\"XYZ\" />");
+            out.println("<input type=\"text\" class='form-control' id=\"login\" name=\"login\" placeholder=\"XYZ\" />");
 
-            // NOMAB TEXTFIELD
+            // PASSWORD TEXTFIELD
             out.println("<label for=\"password\">Mot de passe:</label>");
-            out.println("<input type=\"password\" id=\"password\" name=\"password\" placeholder=\"*******\" />");
+            out.println("<input type=\"password\" class='form-control' id=\"password\" name=\"password\" placeholder=\"*******\" />");
 
             // BUTTON
-            out.println("<br><button type=\"submit\">Login</button></form>");
+            out.println("<br><button type=\"submit\" >Login</button></form>");
             out.println("</div>");
             out.println("</div>");
 

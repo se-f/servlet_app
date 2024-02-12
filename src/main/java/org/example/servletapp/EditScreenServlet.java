@@ -20,7 +20,6 @@ public class EditScreenServlet extends HttpServlet {
         res.setContentType("text/html");
         PrintWriter pw = res.getWriter();
 
-        // Getting book ID
         int idAb = Integer.parseInt(req.getParameter("idab"));
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -51,7 +50,7 @@ public class EditScreenServlet extends HttpServlet {
                 "<head>\n" +
                 "<meta charset=\"UTF-8\">\n" +
                 "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
-                "<title>Edit Book</title>\n" +
+                "<title>Modifier abonné</title>\n" +
                 "<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\">\n" +
                 "</head>\n" +
                 "<body style='display:flex; height:100vh; justify-content:center; align-items:center;'>\n" +

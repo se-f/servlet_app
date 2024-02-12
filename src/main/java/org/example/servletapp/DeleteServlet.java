@@ -10,7 +10,10 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 @WebServlet("/deleteEntry")
 public class DeleteServlet extends HttpServlet {
@@ -34,7 +37,7 @@ public class DeleteServlet extends HttpServlet {
 
                 int count = ps.executeUpdate();
                 if (count == 1) {
-                    // Display success popup and redirect to bookList or homepage
+
                     pw.println("<script>alert('Abonné supprimé avec succès!'); window.location.href='homepage';</script>");
 
 

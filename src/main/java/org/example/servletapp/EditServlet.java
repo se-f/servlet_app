@@ -10,7 +10,10 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 @WebServlet("/editUrl")
 public class EditServlet extends HttpServlet {
@@ -21,7 +24,6 @@ public class EditServlet extends HttpServlet {
         res.setContentType("text/html");
         PrintWriter pw = res.getWriter();
 
-        // Getting book ID
         int idAb = Integer.parseInt(req.getParameter("idab"));
 
         // Get the new values from the request

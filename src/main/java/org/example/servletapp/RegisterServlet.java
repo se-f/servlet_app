@@ -1,10 +1,16 @@
 package org.example.servletapp;
 
-import java.io.*;
-import java.sql.*;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 
 @WebServlet(name = "registerServlet", value = "/register")
 public class RegisterServlet extends HttpServlet {
@@ -29,7 +35,6 @@ public class RegisterServlet extends HttpServlet {
 
                 int count = ps.executeUpdate();
                 if (count == 1) {
-                    // Display success popup and redirect to bookList or homepage
                     pw.println("<script>alert('Abonné ajouté avec succès!'); window.location.href='homepage';</script>");
 
 

@@ -30,8 +30,6 @@ public class Homepage extends HttpServlet {
                     + "<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\">"
                     + "<style>"
                     + "    body {"
-//                    + "        display: flex;"
-//                    + "        align-items: center;"
                     + "        height: 100vh;"
                     + "        margin: 0;"
                     + "        font-family: arial;}"
@@ -42,6 +40,7 @@ public class Homepage extends HttpServlet {
                     + "        text-align: left;"
                     + "        padding: 20px;"
                     + "        border: 1px solid #ccc;"
+                    + "        width: 29vw;"
                     + "        border-radius: 5px;}"
                     + "     .maincontainer{ display: flex; align-items: center; }"
                     + "     .session_container{"
@@ -57,13 +56,6 @@ public class Homepage extends HttpServlet {
                     + "        padding: 8px;"
                     + "        margin-bottom: 16px;"
                     + "        box-sizing: border-box;}"
-                    + "    button {"
-                    + "        padding: 10px;"
-                    + "        background-color: #007bff;"
-                    + "        color: white;"
-                    + "        border: none;"
-                    + "        border-radius: 5px; margin-top:50px;"
-                    + "        cursor: pointer;  margin-top:10px; }"
                     + "</style>"
                     + "</head>"
                     + "<body>"
@@ -75,14 +67,14 @@ public class Homepage extends HttpServlet {
 
             // ID TEXTFIELD
             out.println("<label for=\"idab\">ID:</label>");
-            out.println("<input type=\"text\" id=\"idab\" name=\"idab\" placeholder=\"99\" />");
+            out.println("<input type=\"text\" class='form-control' id=\"idab\" name=\"idab\" placeholder=\"99\" />");
 
             // NOMAB TEXTFIELD
             out.println("<label for=\"nomab\">Nom:</label>");
-            out.println("<input type=\"text\" id=\"nomab\" name=\"nomab\" placeholder=\"XYZ\" />");
+            out.println("<input type=\"text\" class='form-control' id=\"nomab\" name=\"nomab\" placeholder=\"XYZ\" />");
 
             // BUTTON
-            out.println("<br><button type=\"submit\">Créer</button></form>");
+            out.println("<br><button class='btn btn-primary mr-2' type=\"submit\">Créer</button></form>");
             out.println("</div>");
 //            out.println("</div>");
 
